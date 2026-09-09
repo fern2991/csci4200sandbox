@@ -64,17 +64,41 @@ void show_double_combined(double x) {
 }
 
 int main() {
-    char test_char = 'A';
-    int test_int = 1;
-    unsigned test_unsigned = 4294967295U; // Maximum 32-bit unsigned int (0xFFFFFFFF)
-    float test_float = 1.0;
-    double test_double = 1.0;
+    // char test_char = 'A';
+    // int test_int = 1;
+    // unsigned test_unsigned = 4294967295U; // Maximum 32-bit unsigned int (0xFFFFFFFF)
+    // float test_float = 1.0;
+    // double test_double = 1.0;
 
-    show_char_combined(test_char);
-    show_int_combined(test_int);
-    show_unsigned_combined(test_unsigned);
-    show_float_combined(test_float);
-    show_double_combined(test_double);
+    // show_char_combined(test_char);
+    // show_int_combined(test_int);
+    // show_unsigned_combined(test_unsigned);
+    // show_float_combined(test_float);
+    // show_double_combined(test_double);
 
+    // unsigned val = 0x89ABCDEF;
+    // show_unsigned_combined(val);
+
+    // unsigned mask = 0xFF;
+    // unsigned byte0 = val & mask;
+    // show_unsigned_combined(byte0);
+
+    // mask = mask << 8;
+    // unsigned byte1 = (val & mask) >> 8;
+    // show_unsigned_combined(byte1);
+
+    // mask = mask << 8;
+    // unsigned byte2 = (val & mask) >> 16;
+    // show_unsigned_combined(byte2);
+
+    // mask = mask << 8;
+    // unsigned byte3 = (val & mask) >> 24;
+    // show_unsigned_combined(byte3);
+
+    // unsigned combined = (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | byte0;
+    // show_unsigned_combined(combined);
+    int x = -5;
+    x = ((x << 4) - (x << 7));
+    printf("%d", x);
     return 0;
 }
