@@ -62,7 +62,16 @@ void show_double_combined(double x) {
     show_bytes_and_bits((byte_pointer) &x, sizeof(double));
     printf("\n");
 }
+int float_le(float x, float y) {
+    unsigned ux = f2u(x);
+    unsigned uy = f2u(y);
+    /* Get the sign bits */
+    unsigned sx = ux >> 31;
+    unsigned sy = uy >> 31;
 
+    /* Give an expression using only ux, uy, sx, and sy */
+    return (sx > sy) || (ux <= uy);
+}
 int main() {
     // char test_char = 'A';
     // int test_int = 1;
@@ -97,8 +106,6 @@ int main() {
 
     // unsigned combined = (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | byte0;
     // show_unsigned_combined(combined);
-    int x = -5;
-    x = ((x << 4) - (x << 7));
-    printf("%d", x);
+    printf("%d", float_le(2.9, 5.6));
     return 0;
 }
